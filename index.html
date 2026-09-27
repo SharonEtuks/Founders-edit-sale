@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Founder's Edit — Small Business Starter Suite</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --ink:#2B2420;
+    --ink-soft:#5B5148;
+    --cream:#FBF7F2;
+    --cream2:#F3EADD;
+    --paper:#FFFDFA;
+    --terracotta:#BE6E4C;
+    --terracotta-dark:#9C5636;
+    --sage:#899977;
+    --sage-dark:#66755A;
+    --blush:#EAD9CD;
+    --blush-soft:#F3E6DC;
+    --taupe:#A99C8C;
+    --line:#DFD1BE;
+    --line-soft:#EAE0D2;
+  }
+  :root:not([data-theme="light"]){ }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; scroll-padding-top:env(safe-area-inset-top,0px); }
+  body{
+    margin:0; background:var(--cream); color:var(--ink);
+    font-family:'Poppins', sans-serif; font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+    overflow-x:hidden;
+  }
+  img{ max-width:100%; }
+  h1,h2,h3{ font-family:'Lora', serif; font-weight:600; margin:0; color:var(--ink); }
+  p{ margin:0; }
+  a{ color:inherit; }
+  .wrap{ max-width:720px; margin:0 auto; padding:0 28px; }
+  .wrap-wide{ max-width:1000px; margin:0 auto; padding:0 28px; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:
+      radial-gradient(ellipse 700px 420px at 82% -8%, rgba(190,110,76,0.30), transparent 60%),
+      radial-gradient(ellipse 600px 400px at -10% 100%, rgba(137,153,119,0.20), transparent 60%),
+      var(--ink);
+    color:var(--cream);
+    padding:74px 0 56px 0;
+    position:relative;
+  }
+  .kicker{
+    font-size:12.5px; letter-spacing:0.5px; color:#CBB79F;
+    font-family:'Lora',serif; font-style:italic;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    color:var(--paper);
+    font-size:clamp(34px, 8vw, 54px);
+    line-height:1.08;
+    letter-spacing:-0.01em;
+  }
+  .hero .lede{
+    margin-top:20px;
+    font-size:16px; line-height:1.65;
+    color:#D9CDBC;
+    max-width:46ch;
+  }
+  .hero-cta{
+    margin-top:34px;
+    display:flex; flex-wrap:wrap; align-items:center; gap:18px;
+  }
+  .btn{
+    display:inline-block;
+    background:var(--terracotta);
+    color:#FBF7F2;
+    font-family:'Poppins',sans-serif; font-weight:500; font-size:15px;
+    padding:15px 30px;
+    border-radius:3px;
+    text-decoration:none;
+    border:1px solid var(--terracotta);
+    transition:background 0.15s ease, color 0.15s ease;
+  }
+  .btn:hover{ background:#a85736; }
+  .btn.ghost{
+    background:transparent; border:1px solid #6b6154; color:#EDE4D7;
+  }
+  .btn.ghost:hover{ border-color:#EDE4D7; }
+  .price-note{ font-size:13px; color:#B8AB98; }
+  .price-note strong{ color:var(--paper); font-family:'Lora',serif; font-size:17px; font-weight:600; }
+
+  .stack{
+    margin-top:56px;
+    display:flex; justify-content:center;
+    padding-bottom:8px;
+  }
+  .card-mock{
+    width:150px; height:196px; border-radius:2px;
+    background:var(--paper);
+    box-shadow:0 22px 40px -18px rgba(0,0,0,0.55);
+    position:relative;
+    padding:16px 15px;
+  }
+  .card-mock.a{ transform:rotate(-9deg) translateX(28px); z-index:1; background:var(--ink); border:1px solid #4a4038;}
+  .card-mock.b{ transform:rotate(-2deg); z-index:3; }
+  .card-mock.c{ transform:rotate(7deg) translateX(-28px); z-index:2; }
+  .mock-line{ height:5px; background:var(--line-soft); border-radius:2px; margin-bottom:9px; }
+  .mock-line.short{ width:55%; }
+  .mock-line.terra{ background:var(--terracotta); width:34%; height:4px; margin-bottom:14px;}
+  .mock-box{ height:34px; border:1px solid var(--line); border-radius:2px; margin-top:10px; }
+  .card-mock.a .mock-line{ background:#5b5148; }
+  .card-mock.a .mock-title{ color:#EDE4D7; font-family:'Lora',serif; font-size:12px; margin-top:30px; line-height:1.3;}
+
+  /* ---------- SECTION GENERIC ---------- */
+  section{ padding:64px 0; }
+  .eyebrow-soft{
+    font-family:'Lora',serif; font-style:italic; color:var(--terracotta-dark);
+    font-size:14px; margin-bottom:10px;
+  }
+  h2.section-title{ font-size:clamp(26px,5.5vw,34px); line-height:1.2; max-width:16ch; }
+  .lede2{ margin-top:16px; font-size:15px; line-height:1.65; color:var(--ink-soft); max-width:52ch;}
+
+  /* ---------- BEFORE / AFTER ---------- */
+  .swap{ background:var(--paper); }
+  .swap-grid{ margin-top:38px; display:flex; flex-direction:column; gap:0; border-top:1px solid var(--line); }
+  .swap-row{ display:flex; border-bottom:1px solid var(--line); }
+  .swap-row > div{ flex:1; padding:16px 6px; font-size:14px; line-height:1.5; }
+  .swap-row .old{ color:var(--taupe); text-decoration:line-through; text-decoration-color:#D6C6B4; }
+  .swap-row .new{ color:var(--ink); font-weight:500; padding-left:20px; border-left:1px solid var(--line); }
+  .swap-head{ display:flex; margin-top:38px; }
+  .swap-head > div{ flex:1; font-size:11.5px; letter-spacing:1.5px; text-transform:uppercase; color:var(--taupe); padding-bottom:10px; }
+  .swap-head .new{ padding-left:20px; color:var(--sage-dark); }
+
+  /* ---------- WHAT'S INSIDE ---------- */
+  .inside{ background:var(--blush-soft); }
+  .parts{ margin-top:42px; display:flex; flex-direction:column; gap:34px; }
+  .part{ }
+  .part-head{ display:flex; align-items:baseline; gap:12px; margin-bottom:14px; }
+  .part-no{ font-family:'Lora',serif; font-style:italic; color:var(--terracotta); font-size:15px; }
+  .part-name{ font-family:'Lora',serif; font-size:19px; font-weight:600; }
+  .tool-list{ list-style:none; margin:0; padding:0; border-top:1px solid var(--line); }
+  .tool-list li{
+    padding:11px 0; border-bottom:1px solid var(--line);
+    font-size:14.5px; display:flex; justify-content:space-between; gap:14px;
+  }
+  .tool-list li span.desc{ color:var(--ink-soft); font-size:12.5px; text-align:right; max-width:46%; }
+
+  /* ---------- WHO IT'S FOR ---------- */
+  .forwho{ background:var(--paper); }
+  .who-list{ margin-top:30px; display:flex; flex-direction:column; }
+  .who-item{ display:flex; gap:16px; padding:16px 0; border-bottom:1px solid var(--line-soft); }
+  .who-mark{ width:8px; height:8px; border-radius:50%; background:var(--sage-dark); margin-top:7px; flex-shrink:0; }
+  .who-item p{ font-size:15px; line-height:1.55; }
+
+  /* ---------- PRICE ---------- */
+  .price-section{
+    background:var(--ink); color:var(--cream);
+    text-align:center;
+  }
+  .price-tag{ font-family:'Lora',serif; font-size:56px; color:var(--paper); margin:20px 0 4px 0; }
+  .price-was{ color:#8f8474; font-size:15px; text-decoration:line-through; margin-bottom:2px;}
+  .guarantee{ margin-top:26px; font-size:13.5px; color:#B8AB98; max-width:44ch; margin-left:auto; margin-right:auto; line-height:1.6;}
+  .price-section .btn{ margin-top:28px; }
+
+  /* ---------- FAQ ---------- */
+  .faq{ background:var(--cream); }
+  details{ border-bottom:1px solid var(--line); padding:18px 0; }
+  summary{
+    cursor:pointer; font-family:'Lora',serif; font-size:16.5px; font-weight:500;
+    list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px;
+  }
+  summary::-webkit-details-marker{ display:none; }
+  summary::after{
+    content:"+"; font-family:'Poppins',sans-serif; font-size:20px; color:var(--terracotta);
+    flex-shrink:0; transition:transform 0.2s ease;
+  }
+  details[open] summary::after{ transform:rotate(45deg); }
+  details p{ margin-top:12px; font-size:14.5px; line-height:1.6; color:var(--ink-soft); }
+
+  /* ---------- FOOTER ---------- */
+  footer{ background:var(--ink); color:#8f8474; padding:34px 0 44px 0; text-align:center; font-size:12px; letter-spacing:0.5px;}
+  footer .brand{ font-family:'Lora',serif; font-style:italic; color:#D8CBBA; font-size:15px; margin-bottom:8px; }
+
+  @media (max-width:480px){
+    .swap-row > div{ font-size:13px; padding:14px 4px; }
+    .tool-list li span.desc{ display:none; }
+    .stack{ transform:scale(0.9); }
+  }
+</style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="kicker">for the business owner who is just getting started</div>
+      <h1>Everything a consultant<br>would charge you for —<br>already built.</h1>
+      <p class="lede">The Founder's Edit is a complete, done-for-you toolkit of planning, pricing, branding, marketing, and operations templates — designed as one connected system, not a pile of mismatched freebies.</p>
+      <div class="hero-cta">
+        <a class="btn" href="https://payhip.com/b/9Npzk">Get the kit</a>
+        <span class="price-note">One-time payment · <strong>$47</strong></span>
+      </div>
+      <div class="stack">
+        <div class="card-mock a">
+          <div class="mock-title">The Founder's<br>Edit</div>
+        </div>
+        <div class="card-mock b">
+          <div class="mock-line terra"></div>
+          <div class="mock-line"></div>
+          <div class="mock-line short"></div>
+          <div class="mock-box"></div>
+          <div class="mock-box"></div>
+        </div>
+        <div class="card-mock c">
+          <div class="mock-line terra"></div>
+          <div class="mock-line"></div>
+          <div class="mock-line"></div>
+          <div class="mock-line short"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="swap">
+    <div class="wrap">
+      <div class="eyebrow-soft">Before you buy another template pack</div>
+      <h2 class="section-title">You don't need more templates. You need ones that agree with each other.</h2>
+      <p class="lede2">Free templates are free because they were never designed to sit next to one another. Here's what usually happens instead — and what this kit replaces it with.</p>
+      <div class="swap-head">
+        <div>The old way</div>
+        <div class="new">The Founder's Edit</div>
+      </div>
+      <div class="swap-grid">
+        <div class="swap-row"><div class="old">A pricing spreadsheet with no logic behind the numbers</div><div class="new">A cost-based pricing formula you can trust</div></div>
+        <div class="swap-row"><div class="old">An invoice that looks like it was made in five minutes</div><div class="new">A clean, branded invoice clients pay on time</div></div>
+        <div class="swap-row"><div class="old">A content calendar you abandoned by week two</div><div class="new">Pillars, a posting rhythm, and 30 days mapped out</div></div>
+        <div class="swap-row"><div class="old">A launch checklist copied from a blog post</div><div class="new">A checklist built around how small businesses actually open</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="inside">
+    <div class="wrap-wide">
+      <div class="eyebrow-soft">Inside the kit</div>
+      <h2 class="section-title">Thirteen tools, organized into four parts</h2>
+      <p class="lede2">28 pages, delivered as one print-ready PDF. Work through it in a weekend, or one part a week.</p>
+
+      <div class="parts">
+        <div class="part">
+          <div class="part-head"><span class="part-no">Part I</span><span class="part-name">Plan It</span></div>
+          <ul class="tool-list">
+            <li>Business Planning Worksheet <span class="desc">model, offer, audience, 90-day snapshot</span></li>
+            <li>Business Goals &amp; Action Plan <span class="desc">quarterly goals into weekly steps</span></li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="part-head"><span class="part-no">Part II</span><span class="part-name">Price It, Sell It</span></div>
+          <ul class="tool-list">
+            <li>Pricing Calculator &amp; Template <span class="desc">stop guessing your prices</span></li>
+            <li>Invoice Template <span class="desc">get paid on time</span></li>
+            <li>Client &amp; Customer Questionnaire <span class="desc">onboard like a pro</span></li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="part-head"><span class="part-no">Part III</span><span class="part-name">Brand It, Market It</span></div>
+          <ul class="tool-list">
+            <li>Brand Identity Worksheet <span class="desc">colors, fonts, voice, story</span></li>
+            <li>Social Media Content Planner <span class="desc">pillars &amp; weekly rhythm</span></li>
+            <li>30-Day Content Calendar <span class="desc">never stare at a blank caption</span></li>
+            <li>Social Media Post Templates <span class="desc">12 fill-in-the-blank captions</span></li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="part-head"><span class="part-no">Part IV</span><span class="part-name">Launch It, Run It</span></div>
+          <ul class="tool-list">
+            <li>Business Launch Checklist <span class="desc">legal, brand, product, marketing</span></li>
+            <li>Monthly Income &amp; Expense Tracker <span class="desc">know your numbers</span></li>
+            <li>Customer &amp; Order Tracker <span class="desc">every order, organized</span></li>
+            <li>Business Organization Checklist <span class="desc">the back-office basics</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="forwho">
+    <div class="wrap">
+      <div class="eyebrow-soft">Is this for you?</div>
+      <h2 class="section-title">Built to flex around whatever you're building</h2>
+      <div class="who-list">
+        <div class="who-item"><div class="who-mark"></div><p>You're opening a shop, a studio, or a service business and want to start organized instead of catching up later.</p></div>
+        <div class="who-item"><div class="who-mark"></div><p>You've been "soft launched" for months and know your systems are held together with sticky notes.</p></div>
+        <div class="who-item"><div class="who-mark"></div><p>You're a freelancer who wants client paperwork that looks as good as your actual work.</p></div>
+        <div class="who-item"><div class="who-mark"></div><p>You want one place to plan, price, brand, and post — instead of eleven browser tabs.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="price-section" id="buy">
+    <div class="wrap">
+      <div class="eyebrow-soft" style="color:#D8CBBA;">Founding price — limited time</div>
+      <h2 style="color:var(--paper); font-size:26px;">Get the full kit today</h2>
+      <div class="price-was">$67</div>
+      <div class="price-tag">$47</div>
+      <p style="color:#B8AB98; font-size:14px;">One-time payment · instant download · 28 pages</p>
+      <a class="btn" href="https://payhip.com/b/9Npzk" style="margin-top:10px;">Get The Founder's Edit</a>
+      <p class="guarantee">Delivered instantly by email as a single PDF you can print at home, at a copy shop, or fill in digitally on an iPad or tablet. For personal business use.</p>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="wrap">
+      <div class="eyebrow-soft">A few questions</div>
+      <h2 class="section-title">Before you go</h2>
+      <div style="margin-top:30px; border-top:1px solid var(--line);">
+        <details>
+          <summary>Will this work for my type of business?</summary>
+          <p>Yes. Every worksheet was written to flex across product businesses, service businesses, and creative freelancers alike — the questions are about your business, not a specific industry.</p>
+        </details>
+        <details>
+          <summary>Is this editable, or just printable?</summary>
+          <p>It's delivered as a PDF built for both. Print it and fill it by hand, or open it in an app like GoodNotes or Adobe Acrobat to write directly on the pages from an iPad or tablet.</p>
+        </details>
+        <details>
+          <summary>I'm not techy — is this hard to use?</summary>
+          <p>Not at all. There's no software to learn. Every page is fill-in-the-blank, with a short instruction line at the top so you always know what goes where.</p>
+        </details>
+        <details>
+          <summary>Do I need all 13 tools right away?</summary>
+          <p>No. The kit is organized into four parts so you can work through it in order, or jump straight to whatever you need most right now — pricing, a launch checklist, or your content calendar.</p>
+        </details>
+        <details>
+          <summary>Can I use this for more than one business?</summary>
+          <p>This license covers your own personal business use. If you're a coach or consultant hoping to hand this to multiple clients, reach out about a commercial license.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="brand">The Founder's Edit</div>
+    <div>Plan. Price. Brand. Launch. Grow.</div>
+  </footer>
+
+</body>
+</html>
